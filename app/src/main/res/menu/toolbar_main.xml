@@ -3,9 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_favorite"
+        android:id="@+id/action_ghost"
         android:icon="@mipmap/ic_launcher"
-        android:title="Favoris"
+        android:title="@string/give_sign"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/info"
+        android:title="@string/give_sign"
+        app:showAsAction="ifRoom" />
 
 </menu>

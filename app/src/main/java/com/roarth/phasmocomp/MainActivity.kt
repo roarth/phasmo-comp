@@ -1,5 +1,6 @@
 package com.roarth.phasmocomp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    var toolbar = findViewById<Toolbar>(R.id.toolbar)
+    val toolbar = findViewById<Toolbar>(R.id.toolbar)
     setSupportActionBar(toolbar)
   }
 
@@ -22,16 +23,18 @@ class MainActivity : AppCompatActivity() {
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
     return when(item.itemId) {
-      R.id.action_favorite -> {
-        Toast.makeText(this, "Give me a sign!", Toast.LENGTH_SHORT).show()
-        true
+      R.id.action_ghost -> {
+        Toast.makeText(this, R.string.give_sign, Toast.LENGTH_SHORT).show()
+        return true
+      }
+      R.id.action_about -> {
+        val intent=  Intent(this, AboutUsActivity::class.java)
+        startActivity(intent)
+        return true
       }
       else -> super.onOptionsItemSelected(item)
     }
   }
-
-
 
 }
